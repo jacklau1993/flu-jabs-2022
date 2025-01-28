@@ -1,47 +1,43 @@
-# Introduction
-In this project, I analyzed flu jab data from 2022 to evaluate vaccination trends, compliance rates, and demographic patterns. Using SQL to extract and prepare the data and Tableau to create visualizations, I developed a comprehensive dashboard. The dashboard highlights key metrics such as flu jabs by age and race, vaccination percentages by county, total compliance rates, and a running sum of jabs over time. This analysis aimed to provide actionable insights to support public health efforts in improving vaccination outreach and accessibility.
+# Project Overview
+In this project, I analyzed flu vaccination data from 2022 to assess vaccination trends, compliance rates, and demographic patterns. Utilizing SQL for data extraction and Tableau for visualization, I developed a comprehensive dashboard that provides actionable insights to support public health efforts in improving vaccination outreach and accessibility.
 
 # Quick Link
 [flu_jabs](flu_jabs.sql)
 [Dashboard](https://public.tableau.com/views/FluJabs2022/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
-# Scenario
-As a Junior Data Analyst, I worked on a project to analyze flu jab data from 2022, focusing on vaccination trends and compliance rates. Using SQL for data extraction and Tableau for visualization, I developed a comprehensive dashboard to provide actionable insights into the flu jab campaign’s performance.
+# Data Collection and Preparation
+The analysis was conducted using datasets containing information on patient demographics and immunization records. Key steps in data preparation included:
 
-# Process
-## Querying the dataset
-The SQL is to address specific objectives listed in the comment section within the SQL script. There are three components in the script: two Common Table Expression (CTE), and a final query.
+- Data Extraction: Employed SQL queries to extract relevant data from the source databases.
+- Data Cleaning: Addressed missing values and corrected any inconsistencies in the dataset to ensure accuracy.
 
-The first CTE is active_patients. This identifies patients who were:
-1. Active in the hopsital between 2020-01-01 and 2022-12-31
-2. Not deceased (pat.deathdate is null)
-3. At least six months old as of 2022-12-31
-Also, this CTE ensures no duplicate patients (select distinct patient)
+Tools Used: SQL for data extraction and cleaning.
 
-The second CTE is flu_shot_2022. This filters records for patients who received flu jabs in 2022, and captures the earliest date each patient received the flu jabs within 2022.
+# Data Analysis and Visualization
+Utilizing Tableau, I developed an interactive dashboard comprising several key components:
 
-The last query is the final query. It likely combines patient demographic details (e.g. birthdate, race, county, and full name) with information about whether they received the flu jabs. It also integrates results from the active_patients and flu_shot_2022 CTEs.
+1. Vaccination by Age and Race:
+   - Age Distribution: Visualized the number of flu jabs administered across different age groups to identify trends.
+   - Race Distribution: Analyzed vaccination rates among various racial groups to uncover disparities.
 
-## Creating Dashboard
-After querying the dataset, [flu_jabs](flu_jabs.csv) is generated. Then the csv file is imported to Tableau. To create the dashboard, seven different visuals are made. 
+2. Vaccination by County:
+   - Geographical Distribution: Mapped vaccination percentages by county to identify areas with lower compliance rates.
 
-1. A bar graph showing flu jabs by age. 
-2. A similar bar graph showing flu jabs by race. 
-3. A map showing the geographical data of flu jabs. 
-4. A name list showing the full name, age, and whether the person has received flu jabs.
-5. The total percentage of compliancing flu jabs.
-6. The toal number of flu jabs given.
-7. The running sum of flu jabs.
+3. Overall Compliance Rates:
+   - Total Vaccinations: Calculated the total number of flu jabs administered in 2022.
+   - Compliance Percentage: Determined the percentage of the target population that received the flu jab.
+
+4. Running Sum of Vaccinations Over Time:
+   - Temporal Trends: Illustrated the cumulative number of vaccinations over the course of 2022 to identify peak periods.
+
+Interactive Features:
+   - Filters: Enabled users to drill down into specific demographics, time periods, or geographical areas.
+   - Hover Actions: Provided detailed information upon hovering over data points, enhancing the user experience and facilitating deeper insights.
 
 # Key insights
-- Vaccination rates were highest among age group 50-64, reflecting strong outreach efforts to this high-risk group.
-- Certain racial groups had lower vaccination rates, suggesting potential barriers to access or outreach effectiveness.
-- The running sum of jabs revealed a significant Q4 slowdown, indicating a need for additional promotional efforts during that time.
-
-# Recommendations
-- Develop outreach programs tailored to underrepresented racial groups, addressing potential barriers like language or mistrust.
-- Implement incentives or campaigns during Q4 to sustain momentum and improve overall compliance rates.
-- Allocate more resources to underperforming counties based on vaccination percentage data.
+- Demographic Trends: Identified age groups and racial demographics with lower vaccination rates, informing targeted outreach efforts.
+- Geographical Disparities: Highlighted counties with lower compliance rates, suggesting areas for focused public health interventions.
+- Temporal Patterns: Observed peak periods in vaccination administration, aiding in future campaign planning.
 
 # Conclusion
-This project demonstrates my ability to work with healthcare data, extract insights using SQL, and build actionable dashboards in Tableau. The insights and recommendations I developed highlight my analytical approach to supporting public health initiatives.
+This project showcases my proficiency in data analysis and visualization, particularly in a public health context. The interactive dashboard provides valuable insights into flu vaccination trends and compliance rates, supporting data-driven strategies to enhance public health initiatives.
